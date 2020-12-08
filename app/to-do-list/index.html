@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>TO-DO List</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <header>
+        <h3 class="logo">ToDo List</h1>
+          <button class="btn save-btn">Save</button>
+      </header>
+  
+      <section id="lists-container">
+        <div class="lists-input-section">
+          <h2>Things must be done</h2>
+  
+          <div class="input-field">
+            <input id="input-bar" type="text" placeholder="New Task" />
+            <div class="btn-group justify-between">
+              <div class="my-row">
+                <button id="add" class="btn">Add</button>
+                <button id="search" class="btn">Search</button>
+                <button id="clear-all" class="btn">Clear All</button>
+              </div>
+              <div class="my-row">
+                <button class="btn all-btn green-1">All</button>
+                <button class="btn active-btn green-1">Active</button>
+                <button class="btn completed-btn green-1">Compelted</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="lists-display">
+        </div>
+      </section>
+  
+      <footer>
+        <div>Made By John ❤</div>
+      </footer>
+    </div>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

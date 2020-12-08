@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/mobile.css" />
+    <link rel="stylesheet" href="/css/cart_icon.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>常見問題ㄉ｜咬一口廚房</title>
+  </head>
+  <body>
+    <div class="container">
+      <header id="header-home">
+        <nav id="main-nav">
+          <h1><a href="/" class="logo">Just A Bite!</a></h1>
+          <ul>
+            <li><a href="/game">抽個大獎</a></li>
+            <li><a href="/menu">我要點餐</a></li>
+            <li><a href="/checkOrders">查詢訂單</a></li>
+            <li><a class="active" href="/faq">常見問題</a></li>
+            <% if(!customerId) { %>
+              <li><a href="/customerLogin">登入</a></li>
+            <% } else { %>
+              <li><a href="/handleCustomerLogout">登出</a></li>
+              <li><a href="/customerInfo">會員資料</a></li>
+            <% }%>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="faq-container">
+        <div class="intro">
+          <div class="title">
+            <div class="dot"></div>
+            <h2 class="hd-36">FAQ - 常見問題</h2>
+          </div>
+        </div>
+        <ul class="faq-lists">
+          <% if( faqs.length ) { %>
+            <% faqs.forEach((faq) => { %>
+              <li class="list">
+                <span>Q<%= faq.faq_order %>:</span>
+                <div class="questions">
+                  <p class="faq-title">
+                    <%= faq.faq_title %>
+                  </p>
+                  <p class="faq-body">
+                    <%= faq.faq_content %>
+                  </p>
+                </div>
+              </li>
+            <% }) %>
+          <% } %>
+        </ul>
+      </section>
+
+      <section id="home-e">
+        <ul>
+          <li>餐館地址: 天上地下天堂路三分之一里六段520號</li>
+          <li>訂位專線：02-1314-5566</li>
+          <li>
+            營業時間：週一〜週五 09:00~18:00 /
+            週六、週日、國定假日（含連假）休息
+          </li>
+          <li>email：service@justabite.com.tw</li>
+        </ul>
+        <div class="media">
+          <div class="logo">Just A Bite!</div>
+          <div class="medias">
+            <a href="#">Facebook</a>
+            /
+            <a href="#">Instagram</a>
+            /
+            <a href="#">Youtube</a>
+          </div>
+        </div>
+      </section>
+      <%- include('./includes/cart_icon.ejs') %>
+      <footer>
+        Copyright © 2020 Just A Bite All Rights Reserved.
+        咬一口股份有限公司版權所有
+      </footer>
+
+      <script src="/js/faq.js"></script>
+      <script src="/js/cookie.js"></script>
+      <script src="/js/cart_icon.js"></script>
+    </div>
+  </body>
+</html>
